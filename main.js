@@ -4,6 +4,7 @@ import { load } from "./utils/loader.js";
 import { level1Layout, level1Mappings } from "./content/level1/level1Layout.js";
 import { Level } from "./utils/Level.js";
 import { Player } from "./entities/Player.js";
+import { Camera } from "./utils/Camera.js";
 
 kaboom({
 	width: 1280,
@@ -30,6 +31,9 @@ const scenes = {
 		level1.drawMapLayout(level1Layout, level1Mappings);
 
 		const player = new Player(1500, 100, 400, 650, 3, 1, false);
+
+		const camera = new Camera();
+		camera.attach(player.gameObj, 0, 200);
 
 		level1.drawWaves("water", "wave");
 	},

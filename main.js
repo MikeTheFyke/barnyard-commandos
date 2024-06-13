@@ -10,6 +10,7 @@ kaboom({
 
 // Load assets before display
 load.assets();
+load.fonts();
 
 const scenes = {
 	menu: () => {

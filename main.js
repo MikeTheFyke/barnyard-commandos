@@ -1,4 +1,6 @@
 import kaboom from "./libs/kaboom.mjs";
+import { uiManager } from "./utils/UIManager.js";
+import { load } from "./utils/loader.js";
 
 kaboom({
 	width: 1280,
@@ -6,9 +8,12 @@ kaboom({
 	letterbox: true,
 });
 
+// Load assets before display
+load.assets();
+
 const scenes = {
 	menu: () => {
-		add([text("Test"), pos(640, 360)]);
+		uiManager.displayMainMenu();
 	},
 	controls: () => {},
 	// Levels 1, 2 & 3

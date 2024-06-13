@@ -14,6 +14,24 @@ export const load = {
 		// Common
 		loadSprite("forest-background", "./assets/Forest_Background_0.png");
 		// Game Sprites
+		loadSprite("player", "./assets/Player.png", {
+			sliceX: 4,
+			sliceY: 6,
+			anims: {
+				idle: {
+					from: 0,
+					to: 3,
+					loop: true,
+				},
+				run: {
+					from: 4,
+					to: 7,
+					loop: true,
+				},
+				"jump-up": 8,
+				"jump-down": 9,
+			},
+		});
 		loadSprite("coin", "./assets/Coin.png");
 		loadSprite("bridge", "./assets/Bridge.png");
 		loadSprite("grass-tileset", "./assets/Grass_Tileset.png", {

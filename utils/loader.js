@@ -225,6 +225,18 @@ export const load = {
 				},
 			},
 		});
+		loadSprite("water", "./assets/Water.png", {
+			sliceX: 8,
+			sliceY: 1,
+			anims: {
+				wave: {
+					from: 0,
+					to: 7,
+					speed: 16,
+					loop: true,
+				},
+			},
+		});
 	},
 	sounds: () => {
 		loadSound("confirm-ui", "./sounds/sounds_confirm-ui.wav");

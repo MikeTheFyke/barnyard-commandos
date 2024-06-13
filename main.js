@@ -10,6 +10,7 @@ kaboom({
 
 // Load assets before display
 load.assets();
+load.sounds();
 load.fonts();
 
 const scenes = {

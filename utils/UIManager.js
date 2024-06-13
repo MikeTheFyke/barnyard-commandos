@@ -23,6 +23,11 @@ class UIManager {
 			"Press Enter to start game",
 			vec2(center().x, center().y + 100)
 		);
+		onKeyPress("enter", () => {
+			// Once Enter is typed the user will be redirected to the controls screen
+			play("confirm-ui", { speed: 1.5 });
+			go("controls");
+		});
 	}
 }
 

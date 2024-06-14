@@ -2,6 +2,7 @@ import kaboom from "./libs/kaboom.mjs";
 import { uiManager } from "./utils/UIManager.js";
 import { load } from "./utils/loader.js";
 import { level1Layout, level1Mappings } from "./content/level1/level1Layout.js";
+import { level1Config } from "./content/level1/config.js";
 import { Level } from "./utils/Level.js";
 import { Player } from "./entities/Player.js";
 import { attachCamera } from "./utils/Camera.js";
@@ -32,7 +33,17 @@ const scenes = {
 		level1.drawBackground("background-barnyard_320");
 		level1.drawMapLayout(level1Layout, level1Mappings);
 
-		const player = new Player(1500, 100, 400, 650, 3, 1, false);
+		const player = new Player(
+			level1Config.playerStartPosX,
+			level1Config.playerStartPosY,
+			level1Config.playerSpeed,
+			level1Config.jumpForce,
+			level1Config.numberOfLives,
+			1,
+			false
+		);
+
+		player.update();
 
 		attachCamera(player.gameObj, 0, 200);
 

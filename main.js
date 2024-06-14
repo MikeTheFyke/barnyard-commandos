@@ -26,8 +26,10 @@ const scenes = {
 	},
 	// Levels 1, 2 & 3
 	1: () => {
+		setGravity(1400);
+
 		const level1 = new Level();
-		level1.drawBackground("forest-background");
+		level1.drawBackground("background-barnyard_320");
 		level1.drawMapLayout(level1Layout, level1Mappings);
 
 		const player = new Player(1500, 100, 400, 650, 3, 1, false);

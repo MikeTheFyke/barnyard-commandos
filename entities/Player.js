@@ -20,13 +20,13 @@ export class Player {
 	}
 	makePlayer() {
 		this.gameObj = add([
-			sprite("player", { anim: "idle" }),
+			sprite("wolly", { anim: "idle" }),
 			area({ shape: new Rect(vec2(0, 3), 8, 8) }),
 			anchor("center"),
 			pos(this.initialX, this.initialY),
 			scale(4),
 			body(),
-			"player",
+			"wolly",
 		]);
 	}
 }

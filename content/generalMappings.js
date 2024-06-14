@@ -2,13 +2,9 @@ export function generateMappings(tileType) {
 	return {
 		// Game Objects
 		0: () => [
-			// Tile Type
 			sprite(`${tileType}-tileset`, { anim: "tl" }),
-			// Area creates a hitbox (a solid) = platforms
 			area(),
-			// Body + isStatic creates the behaviour for the area component that is effected by gravity
 			body({ isStatic: true }),
-			// offscreen stops calculations if sprite is off screen
 			offscreen(),
 		],
 		1: () => [
@@ -74,6 +70,6 @@ export function generateMappings(tileType) {
 			offscreen(),
 		],
 		o: () => [sprite("bridge"), area(), body({ isStatic: true }), offscreen()],
-		"@": () => [sprite("coin"), area(), "coin", offscreen()],
+		"@": () => [sprite("apple"), area(), "apple", offscreen()],
 	};
 }

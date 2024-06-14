@@ -11,8 +11,16 @@ export const load = {
 		loadSprite("space", "./assets/controls/Key_Space_Dark.png");
 		// Main Screen
 		loadSprite("logo", "./assets/Logo.png");
+		loadSprite("logo-128", "./assets/barnyard/Logo_128.png");
+		loadSprite("porks-256", "./assets/barnyard/Porks_Logo_256.png");
+		loadSprite("rams-256", "./assets/barnyard/Rams_Logo_256.png");
 		// Common
 		loadSprite("forest-background", "./assets/Forest_Background_0.png");
+		loadSprite("background-ARMY", "./assets/barnyard/Background_ARMY.png");
+		loadSprite(
+			"background-barnyard_320",
+			"./assets/barnyard/Background_Barnyard_320.png"
+		);
 		// Game Sprites
 		loadSprite("player", "./assets/Player.png", {
 			sliceX: 4,
@@ -32,7 +40,26 @@ export const load = {
 				"jump-down": 9,
 			},
 		});
+		loadSprite("wolly", "./assets/barnyard/Wolly_192.png", {
+			sliceX: 4,
+			sliceY: 6,
+			anims: {
+				idle: {
+					from: 0,
+					to: 3,
+					loop: true,
+				},
+				run: {
+					from: 4,
+					to: 7,
+					loop: true,
+				},
+				"jump-up": 8,
+				"jump-down": 9,
+			},
+		});
 		loadSprite("coin", "./assets/Coin.png");
+		loadSprite("apple", "./assets/barnyard/Apple.png");
 		loadSprite("bridge", "./assets/Bridge.png");
 		loadSprite("grass-tileset", "./assets/Grass_Tileset.png", {
 			// How many tiles in this image ?

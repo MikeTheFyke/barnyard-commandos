@@ -11,13 +11,33 @@ class UIManager {
 		]);
 	}
 	displayMainMenu() {
-		add([sprite("forest-background"), scale(4)]);
+		add([sprite("background-ARMY"), scale(4)]);
 		add([
-			sprite("logo"),
+			sprite("logo-128"),
 			area(),
 			anchor("center"),
 			pos(center().x, center().y - center().y / 2),
-			scale(8),
+			scale(6),
+		]);
+		add([
+			sprite("porks-256"),
+			area(),
+			anchor("center"),
+			pos(
+				center().x - center().x / 2 - center().x / 8,
+				center().y + center().y / 3
+			),
+			scale(1.5),
+		]);
+		add([
+			sprite("rams-256"),
+			area(),
+			anchor("center"),
+			pos(
+				center().x + center().x / 2 + center().x / 8,
+				center().y + center().y / 3
+			),
+			scale(1.5),
 		]);
 		this.displayUIMessage(
 			"Press Enter to start game",
@@ -25,7 +45,7 @@ class UIManager {
 		);
 		this.displayUIMessage(
 			"Press Space for controls",
-			vec2(center().x, center().y + 160)
+			vec2(center().x, center().y + 240)
 		);
 		onKeyPress("enter", () => {
 			// Once Enter is typed the game will load level 1
@@ -39,7 +59,7 @@ class UIManager {
 		});
 	}
 	displayControlsMenu() {
-		add([sprite("forest-background"), scale(4)]);
+		add([sprite("background-ARMY"), scale(4)]);
 		const message = add([
 			text("Controls", {
 				size: 48,

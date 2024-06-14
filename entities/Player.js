@@ -13,6 +13,7 @@ export class Player {
 		this.initialX = posX;
 		this.initialY = posY;
 		this.makePlayer();
+		this.setplayerControls();
 		this.speed = speed;
 		this.jumpForce = jumpForce;
 		this.lives = numberOfLives;
@@ -28,5 +29,25 @@ export class Player {
 			body(),
 			"wolly",
 		]);
+	}
+	setplayerControls() {
+		onKeyDown("left", () => {
+			if (this.gameObj.curAnim() !== "run") this.gameObj.play("run");
+			this.gameObj.flipX = true;
+			this.gameObj.move(-this.speed, 0);
+		});
+		onKeyDown("right", () => {
+			if (this.gameObj.curAnim() !== "run") this.gameObj.play("run");
+			this.gameObj.flipX = false;
+			this.gameObj.move(+this.speed, 0);
+		});
+		onKeyDown("space", () => {
+			// Create a double jump
+			// this.gameObj.jump(this.jumpForce);
+			if (this.gameObj.isGrounded()) {
+				this.gameObj.jump(this.jumpForce);
+				play("jump");
+			}
+		});
 	}
 }

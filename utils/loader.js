@@ -295,5 +295,6 @@ export const load = {
 	},
 	sounds: () => {
 		loadSound("confirm-ui", "./sounds/sounds_confirm-ui.wav");
+		loadSound("jump", "./sounds/sounds_jump.wav");
 	},
 };

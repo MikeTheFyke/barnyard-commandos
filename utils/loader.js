@@ -22,24 +22,24 @@ export const load = {
 			"./assets/barnyard/Background_Barnyard_320.png"
 		);
 		// Game Sprites
-		loadSprite("player", "./assets/Player.png", {
-			sliceX: 4,
-			sliceY: 6,
-			anims: {
-				idle: {
-					from: 0,
-					to: 3,
-					loop: true,
-				},
-				run: {
-					from: 4,
-					to: 7,
-					loop: true,
-				},
-				"jump-up": 8,
-				"jump-down": 9,
-			},
-		});
+		// loadSprite("player", "./assets/Player.png", {
+		// 	sliceX: 4,
+		// 	sliceY: 6,
+		// 	anims: {
+		// 		idle: {
+		// 			from: 0,
+		// 			to: 3,
+		// 			loop: true,
+		// 		},
+		// 		run: {
+		// 			from: 4,
+		// 			to: 7,
+		// 			loop: true,
+		// 		},
+		// 		"jump-up": 8,
+		// 		"jump-down": 9,
+		// 	},
+		// });
 		loadSprite("wolly", "./assets/barnyard/Wolly_192.png", {
 			sliceX: 4,
 			sliceY: 6,
@@ -58,8 +58,18 @@ export const load = {
 				"jump-down": 9,
 			},
 		});
-		loadSprite("coin", "./assets/Coin.png");
-		loadSprite("apple", "./assets/barnyard/Apple.png");
+		// loadSprite("coin", "./assets/Coin.png");
+		loadSprite("apple", "./assets/barnyard/Apple.png", {
+			sliceX: 5,
+			sliceY: 2,
+			anims: {
+				idle: {
+					from: 0,
+					to: 9,
+					loop: true,
+				},
+			},
+		});
 		loadSprite("bridge", "./assets/Bridge.png");
 		loadSprite("grass-tileset", "./assets/Grass_Tileset.png", {
 			// How many tiles in this image ?

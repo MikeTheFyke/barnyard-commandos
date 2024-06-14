@@ -70,6 +70,11 @@ export function generateMappings(tileType) {
 			offscreen(),
 		],
 		o: () => [sprite("bridge"), area(), body({ isStatic: true }), offscreen()],
-		"@": () => [sprite("apple"), area(), "apple", offscreen()],
+		"@": () => [
+			sprite("apple", { anim: "idle" }),
+			area(),
+			"apple",
+			offscreen(),
+		],
 	};
 }

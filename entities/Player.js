@@ -49,5 +49,9 @@ export class Player {
 				play("jump");
 			}
 		});
+		onKeyRelease(() => {
+			if (isKeyReleased("right") || isKeyReleased("left"))
+				this.gameObj.play("idle");
+		});
 	}
 }

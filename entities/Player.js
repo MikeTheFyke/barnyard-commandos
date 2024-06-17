@@ -32,6 +32,18 @@ export class Player {
 			"wolly",
 		]);
 	}
+
+	enablePassthrough() {
+		this.gameObj.onBeforePhysicsResolve((collision) => {
+			if (collision.target.is("passthrough") && this.gameObj.isJumping()) {
+				collision.preventResolution();
+			}
+			if (collision.target.is("passthrough") && isKeyDown("down")) {
+				collision.preventResolution();
+			}
+		});
+	}
+
 	setplayerControls() {
 		onKeyDown("left", () => {
 			if (this.gameObj.curAnim() !== "run") this.gameObj.play("run");

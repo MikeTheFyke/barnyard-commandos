@@ -43,6 +43,7 @@ const scenes = {
 			false
 		);
 
+		player.enablePassthrough();
 		player.update();
 
 		attachCamera(player.gameObj, 0, 200);

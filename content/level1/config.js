@@ -3,6 +3,6 @@ export const level1Config = {
 	playerSpeed: 400,
 	jumpForce: 650,
 	numberOfLives: 3,
-	playerStartPosX: 1500,
+	playerStartPosX: 800,
 	playerStartPosY: 100,
 };

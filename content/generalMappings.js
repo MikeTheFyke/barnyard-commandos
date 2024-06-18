@@ -25,7 +25,12 @@ export function generateMappings(tileType) {
 			body({ isStatic: true }),
 			offscreen(),
 		],
-		4: () => [sprite(`${tileType}-tileset`, { anim: "mm" }), offscreen()],
+		4: () => [
+			sprite(`${tileType}-tileset`, { anim: "mm" }),
+			area(),
+			body({ isStatic: true }),
+			offscreen(),
+		],
 		5: () => [
 			sprite(`${tileType}-tileset`, { anim: "mr" }),
 			area(),
@@ -38,7 +43,6 @@ export function generateMappings(tileType) {
 		9: () => [
 			sprite(`${tileType}-oneway-tileset`, { anim: "tl" }),
 			area({ shape: new Rect(vec2(0), 16, 3) }),
-			// "passthrough" is a tag that can be referenced later
 			"passthrough",
 			body({ isStatic: true }),
 			offscreen(),

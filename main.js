@@ -56,10 +56,8 @@ const scenes = {
 	end: () => {},
 };
 
-// Instead of manually calling each scene object we will map though to call all of them in one loop
 for (const key in scenes) {
 	scene(key, scenes[key]);
 }
 
-// Kaboom requires a default screen to run, here i will use menu
 go("menu");

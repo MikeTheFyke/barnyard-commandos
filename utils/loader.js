@@ -3,44 +3,24 @@ export const load = {
 		loadFont("Round", "./fonts/round9x13.ttf");
 	},
 	assets: () => {
-		// Controls Screen
 		loadSprite("up", "./assets/controls/Key_Arrow_Up_Dark.png");
 		loadSprite("down", "./assets/controls/Key_Arrow_Down_Dark.png");
 		loadSprite("left", "./assets/controls/Key_Arrow_Left_Dark.png");
 		loadSprite("right", "./assets/controls/Key_Arrow_Right_Dark.png");
 		loadSprite("space", "./assets/controls/Key_Space_Dark.png");
-		// Main Screen
+
 		loadSprite("logo", "./assets/Logo.png");
 		loadSprite("logo-128", "./assets/barnyard/Logo_128.png");
 		loadSprite("porks-256", "./assets/barnyard/Porks_Logo_256.png");
 		loadSprite("rams-256", "./assets/barnyard/Rams_Logo_256.png");
-		// Common
+
 		loadSprite("forest-background", "./assets/Forest_Background_0.png");
 		loadSprite("background-ARMY", "./assets/barnyard/Background_ARMY.png");
 		loadSprite(
 			"background-barnyard_320",
 			"./assets/barnyard/Background_Barnyard_320.png"
 		);
-		// Game Sprites
-		// loadSprite("player", "./assets/Player.png", {
-		// 	sliceX: 4,
-		// 	sliceY: 6,
-		// 	anims: {
-		// 		idle: {
-		// 			from: 0,
-		// 			to: 3,
-		// 			loop: true,
-		// 		},
-		// 		run: {
-		// 			from: 4,
-		// 			to: 7,
-		// 			loop: true,
-		// 		},
-		// 		"jump-up": 8,
-		// 		"jump-down": 9,
-		// 	},
-		// });
-		loadSprite("wolly", "./assets/barnyard/Wolly_192.png", {
+		loadSprite("wolly", "./assets/barnyard/Wolly_720.png", {
 			sliceX: 4,
 			sliceY: 6,
 			anims: {
@@ -58,7 +38,6 @@ export const load = {
 				"jump-down": 9,
 			},
 		});
-		// loadSprite("coin", "./assets/Coin.png");
 		loadSprite("apple", "./assets/barnyard/Apple.png", {
 			sliceX: 5,
 			sliceY: 2,
@@ -72,13 +51,9 @@ export const load = {
 		});
 		loadSprite("bridge", "./assets/Bridge.png");
 		loadSprite("grass-tileset", "./assets/Grass_Tileset.png", {
-			// How many tiles in this image ?
 			sliceX: 3,
-			sliceY: 4,
-			// Specify Animations for tiles - Optinal Value
-			// Maps through slices as frames from top row left to right, row by row
+			sliceY: 3,
 			anims: {
-				// what frame to display tl = topLeft, tm = top middle etc ...
 				tl: 0,
 				tm: 1,
 				tr: 2,
@@ -92,7 +67,7 @@ export const load = {
 		});
 		loadSprite("grass-oneway-tileset", "./assets/Grass_Oneway.png", {
 			sliceX: 3,
-			sliceY: 4,
+			sliceY: 3,
 			anims: {
 				tl: 0,
 				tm: 1,
@@ -140,7 +115,7 @@ export const load = {
 		loadSprite("castle-background", "./assets/Castle_Background_0.png");
 		loadSprite("brick-tileset", "./assets/Brick_Tileset.png", {
 			sliceX: 3,
-			sliceY: 4,
+			sliceY: 3,
 			anims: {
 				tl: 0,
 				tm: 1,
@@ -155,7 +130,7 @@ export const load = {
 		});
 		loadSprite("brick-oneway-tileset", "./assets/Brick_Oneway.png", {
 			sliceX: 3,
-			sliceY: 4,
+			sliceY: 3,
 			anims: {
 				tl: 0,
 				tm: 1,
@@ -210,7 +185,7 @@ export const load = {
 
 		loadSprite("rock-tileset", "./assets/Grass_Rock_Tileset.png", {
 			sliceX: 3,
-			sliceY: 4,
+			sliceY: 3,
 			anims: {
 				tl: 0,
 				tm: 1,
@@ -225,7 +200,7 @@ export const load = {
 		});
 		loadSprite("rock-oneway-tileset", "./assets/Grass_Rock_Oneway.png", {
 			sliceX: 3,
-			sliceY: 4,
+			sliceY: 3,
 			anims: {
 				tl: 0,
 				tm: 1,

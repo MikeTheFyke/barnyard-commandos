@@ -277,5 +277,6 @@ export const load = {
 		loadSound("confirm-ui", "./sounds/sounds_confirm-ui.wav");
 		loadSound("jump", "./sounds/sounds_jump.wav");
 		loadSound("hit", "./sounds/sounds_hit.wav");
+		loadSound("apple", "./sounds/sounds_coin.wav");
 	},
 };

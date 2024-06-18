@@ -44,6 +44,7 @@ const scenes = {
 		);
 
 		player.enablePassthrough();
+		player.enableCoinPickup();
 		player.update();
 
 		attachCamera(player.gameObj, 0, 200);

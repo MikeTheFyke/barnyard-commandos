@@ -3,6 +3,7 @@ export class Player {
 	isMoving = false;
 	isRespawning = false;
 	coyoteLapse = 0.1;
+	apples = 0;
 
 	constructor(
 		posX,
@@ -44,6 +45,14 @@ export class Player {
 			if (collision.target.is("passthrough") && isKeyDown("down")) {
 				collision.preventResolution();
 			}
+		});
+	}
+
+	enableCoinPickup() {
+		this.gameObj.onCollide("apple", (apple) => {
+			this.coins++;
+			destroy(apple);
+			play("apple");
 		});
 	}
 

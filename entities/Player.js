@@ -50,7 +50,7 @@ export class Player {
 
 	enableCoinPickup() {
 		this.gameObj.onCollide("apple", (apple) => {
-			this.coins++;
+			this.apples++;
 			destroy(apple);
 			play("apple");
 		});
@@ -144,6 +144,18 @@ export class Player {
 				play("hit", { speed: 1.5 });
 				this.respawnPlayer();
 			}
+		});
+	}
+
+	updateLives(livesCountUI) {
+		onUpdate(() => {
+			livesCountUI.text = this.lives;
+		});
+	}
+
+	updateAppleCount(appleCountUI) {
+		onUpdate(() => {
+			appleCountUI.text = ` ${this.apples}   / ${appleCountUI.fullAppleCount}`;
 		});
 	}
 }

@@ -54,6 +54,11 @@ export const load = {
 				},
 			},
 		});
+		loadSprite("apple-icon", "./assets/barnyard/Apples_Ui.png", {
+			sliceX: 1,
+			sliceY: 1,
+		});
+		loadSprite("lives-icon", "./assets/Stars_Ui.png");
 		loadSprite("bridge", "./assets/Bridge.png");
 		loadSprite("grass-tileset", "./assets/Grass_Tileset.png", {
 			sliceX: 3,

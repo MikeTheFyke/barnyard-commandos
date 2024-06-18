@@ -1,4 +1,43 @@
 class UIManager {
+	displayLivesCount(player) {
+		this.livesCountUI = add([
+			text("", {
+				size: 50,
+				font: "round",
+			}),
+			pos(120, 10),
+			fixed(),
+		]);
+		this.livesCountUI.add([
+			sprite("lives-icon"),
+			pos(180, 0),
+			scale(3),
+			fixed(),
+		]);
+	}
+
+	displayAppleCount(player) {
+		this.appleCountUI = add([
+			text(player.coins, {
+				size: 50,
+				font: "round",
+			}),
+			{
+				fullAppleCount: get("apple", {
+					recursive: true,
+				}).length,
+			},
+			fixed(),
+			pos(70, 10),
+		]);
+		this.appleCountUI.add([
+			sprite("apple-icon"),
+			pos(-60, 0),
+			scale(3),
+			fixed(),
+		]);
+	}
+
 	displayUIMessage(content, position) {
 		const message = add([
 			text(content, {

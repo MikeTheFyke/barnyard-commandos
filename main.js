@@ -50,6 +50,11 @@ const scenes = {
 		attachCamera(player.gameObj, 0, 200);
 
 		level1.drawWaves("water", "wave");
+
+		uiManager.displayAppleCount(player);
+		player.updateAppleCount(uiManager.appleCountUI);
+		uiManager.displayLivesCount(player);
+		player.updateLives(uiManager.livesCountUI);
 	},
 	2: () => {},
 	3: () => {},

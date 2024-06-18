@@ -22,7 +22,7 @@ export const load = {
 		);
 		loadSprite("wolly", "./assets/barnyard/Wolly_720.png", {
 			sliceX: 4,
-			sliceY: 6,
+			sliceY: 7,
 			anims: {
 				idle: {
 					from: 0,
@@ -36,6 +36,11 @@ export const load = {
 				},
 				"jump-up": 8,
 				"jump-down": 9,
+				shoot: {
+					from: 24,
+					to: 27,
+					loop: true,
+				},
 			},
 		});
 		loadSprite("apple", "./assets/barnyard/Apple.png", {

@@ -56,7 +56,6 @@ export class Player {
 		});
 
 		onKeyDown("right", () => {
-			console.log("this.gameObj.curAnim() : ", this.gameObj.curAnim());
 			if (this.gameObj.curAnim() !== "run") {
 				this.gameObj.play("run");
 				this.gameObj.flipX = false;
@@ -66,23 +65,29 @@ export class Player {
 		});
 
 		onKeyDown("space", () => {
-			if (this.gameObj.isGrounded() && !this.isRespawning) {
-				this.hasJumpedOnce = true;
-				this.gameObj.jump(this.jumpForce);
-				play("jump");
+			if (!this.gameObj.isGrounded() && this.hasJumpedOnce) {
+				return;
 			}
-			if (
-				!this.gameObj.isGrounded() &&
-				time() - this.timeSinceLastGrounded < this.coyoteLapse &&
-				!this.hasJumpedOnce
-			) {
-				this.gameObj.jump(this.jumpForce);
-				play("jump");
+			if (time() - this.timeSinceLastGrounded > time.coyoteLapse) {
+				return;
+			}
+			this.gameObj.jump(this.jumpForce);
+			if (this.gameObj.curAnim() !== "jump") play("jump");
+			this.hasJumpedOnce = true;
+		});
+
+		onKeyDown("z", () => {
+			if (this.gameObj.isGrounded() && this.gameObj.curAnim() !== "shoot") {
+				this.gameObj.play("shoot");
 			}
 		});
 
 		onKeyRelease(() => {
-			if (isKeyReleased("right") || isKeyReleased("left")) {
+			if (
+				isKeyReleased("right") ||
+				isKeyReleased("left") ||
+				isKeyReleased("z")
+			) {
 				this.gameObj.play("idle");
 				this.isMoving = false;
 			}
@@ -112,7 +117,7 @@ export class Player {
 
 			if (
 				!this.gameObj.isGrounded() &&
-				this.heightDelta > 0 &&
+				this.heightDelta > -100 &&
 				this.gameObj.curAnim() !== "jump-up"
 			) {
 				this.gameObj.play("jump-up");
@@ -120,7 +125,7 @@ export class Player {
 
 			if (
 				!this.gameObj.isGrounded() &&
-				this.heightDelta < 0 &&
+				this.heightDelta < -100 &&
 				this.gameObj.curAnim() !== "jump-down"
 			) {
 				this.gameObj.play("jump-down");

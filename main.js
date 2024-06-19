@@ -52,8 +52,9 @@ const scenes = {
 		level1.drawWaves("water", "wave");
 
 		uiManager.displayAppleCount(player);
-		player.updateAppleCount(uiManager.appleCountUI);
 		uiManager.displayLivesCount(player);
+
+		player.updateAppleCount(uiManager.appleCountUI);
 		player.updateLives(uiManager.livesCountUI);
 	},
 	2: () => {},

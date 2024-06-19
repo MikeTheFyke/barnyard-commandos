@@ -1,16 +1,16 @@
 class UIManager {
 	displayLivesCount(player) {
 		this.livesCountUI = add([
-			text("", {
+			text(`${player.lives}`, {
 				size: 50,
 				font: "round",
 			}),
-			pos(120, 10),
+			pos(85, 10),
 			fixed(),
 		]);
 		this.livesCountUI.add([
 			sprite("lives-icon"),
-			pos(180, 0),
+			pos(-75, -5),
 			scale(3),
 			fixed(),
 		]);
@@ -18,7 +18,7 @@ class UIManager {
 
 	displayAppleCount(player) {
 		this.appleCountUI = add([
-			text(player.coins, {
+			text(player.apples, {
 				size: 50,
 				font: "round",
 			}),
@@ -28,7 +28,7 @@ class UIManager {
 				}).length,
 			},
 			fixed(),
-			pos(70, 10),
+			pos(70, 70),
 		]);
 		this.appleCountUI.add([
 			sprite("apple-icon"),

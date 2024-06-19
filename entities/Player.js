@@ -4,6 +4,7 @@ export class Player {
 	isRespawning = false;
 	coyoteLapse = 0.1;
 	apples = 0;
+	lives = 3;
 
 	constructor(
 		posX,

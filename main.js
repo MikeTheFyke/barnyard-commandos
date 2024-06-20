@@ -5,6 +5,8 @@ import { level1Layout, level1Mappings } from "./content/level1/level1Layout.js";
 import { level1Config } from "./content/level1/config.js";
 import { level2Layout, level2Mappings } from "./content/level2/level2Layout.js";
 import { level2Config } from "./content/level2/config.js";
+import { level3Layout, level3Mappings } from "./content/level3/level3Layout.js";
+import { level3Config } from "./content/level3/config.js";
 import { Level } from "./utils/Level.js";
 import { Player } from "./entities/Player.js";
 import { attachCamera } from "./utils/Camera.js";
@@ -94,7 +96,39 @@ const scenes = {
 		player.updateAppleCount(uiManager.appleCountUI);
 		player.updateLives(uiManager.livesCountUI);
 	},
-	3: () => {},
+	3: () => {
+		setGravity(1400);
+
+		const level3 = new Level();
+		level3.drawBackground("background-castle");
+		level3.drawMapLayout(level3Layout, level3Mappings);
+
+		const player = new Player(
+			level3Config.playerStartPosX,
+			level3Config.playerStartPosY,
+			level3Config.playerSpeed,
+			level3Config.jumpForce,
+			level3Config.numberOfLives,
+			2,
+			false
+		);
+
+		player.enablePassthrough();
+		player.enableCoinPickup();
+		player.update();
+
+		attachCamera(player.gameObj, 0, 200);
+
+		level3.drawWaves("clouds", "wave");
+
+		uiManager.addDarkBg();
+
+		uiManager.displayAppleCount(player);
+		uiManager.displayLivesCount(player);
+
+		player.updateAppleCount(uiManager.appleCountUI);
+		player.updateLives(uiManager.livesCountUI);
+	},
 	gameover: () => {},
 	end: () => {},
 };

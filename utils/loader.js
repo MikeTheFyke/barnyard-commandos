@@ -189,9 +189,9 @@ export const load = {
 		loadSprite("axe", "./assets/Axe_Trap.png");
 		loadSprite("saw", "./assets/Circular_Saw.png");
 
-		loadSprite("sky-background-0", "./assets/Sky_Background_0.png");
-		loadSprite("sky-background-1", "./assets/Sky_Background_1.png");
-		loadSprite("sky-background-2", "./assets/Sky_Background_2.png");
+		loadSprite("background-sky-0", "./assets/Sky_Background_0.png");
+		loadSprite("background-sky-1", "./assets/Sky_Background_1.png");
+		loadSprite("background-sky-2", "./assets/Sky_Background_2.png");
 
 		loadSprite("rock-tileset", "./assets/Grass_Rock_Tileset.png", {
 			sliceX: 3,

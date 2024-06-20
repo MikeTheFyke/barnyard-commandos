@@ -13,9 +13,9 @@ export class Player {
 		jumpForce,
 		numberOfLives,
 		currentLevelScene,
-		isInTerminalScene
+		isInFinalLevel
 	) {
-		this.isInTerminalScene = isInTerminalScene;
+		this.isInFinalLevel = isInFinalLevel;
 		this.currentLevelScene = currentLevelScene;
 		this.initialX = posX;
 		this.initialY = posY;
@@ -58,6 +58,12 @@ export class Player {
 	}
 
 	setplayerControls() {
+		onKeyDown("z", () => {
+			if (this.gameObj.curAnim() !== "shoot") {
+				this.gameObj.play("shoot");
+			}
+		});
+
 		onKeyDown("left", () => {
 			if (this.gameObj.curAnim() !== "run") this.gameObj.play("run");
 			this.gameObj.flipX = true;
@@ -84,12 +90,6 @@ export class Player {
 			this.gameObj.jump(this.jumpForce);
 			if (this.gameObj.curAnim() !== "jump") play("jump");
 			this.hasJumpedOnce = true;
-		});
-
-		onKeyDown("z", () => {
-			if (this.gameObj.isGrounded() && this.gameObj.curAnim() !== "shoot") {
-				this.gameObj.play("shoot");
-			}
 		});
 
 		onKeyRelease(() => {
@@ -159,6 +159,9 @@ export class Player {
 	updateAppleCount(appleCountUI) {
 		onUpdate(() => {
 			appleCountUI.text = ` ${this.apples}   / ${appleCountUI.fullAppleCount}`;
+			if (this.apples === appleCountUI.fullAppleCount) {
+				go(this.isInFinalLevel ? "end" : this.currentLevelScene + 1);
+			}
 		});
 	}
 }

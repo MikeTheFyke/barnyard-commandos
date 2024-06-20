@@ -122,7 +122,7 @@ export const load = {
 				swim: { from: 0, to: 1, loop: true },
 			},
 		});
-		loadSprite("castle-background", "./assets/Castle_Background_0.png");
+		loadSprite("background-castle", "./assets/Castle_Background_0.png");
 		loadSprite("brick-tileset", "./assets/Brick_Tileset.png", {
 			sliceX: 3,
 			sliceY: 3,

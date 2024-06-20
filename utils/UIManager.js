@@ -28,8 +28,8 @@ class UIManager {
 					recursive: true,
 				}).length,
 			},
-			fixed(),
 			pos(70, 10),
+			fixed(),
 		]);
 		this.appleCountUI.add([
 			sprite("apple-icon"),
@@ -41,7 +41,7 @@ class UIManager {
 
 	addDarkBg() {
 		add([sprite("background-ARMY"), pos(0, 0), scale(4, 0.4), fixed()]);
-		add([rect(275, 55), pos(5, 5), color(0, 100, 0), fixed()]);
+		add([rect(330, 55), pos(5, 5), color(0, 100, 0), fixed()]);
 		add([
 			rect(120, 55),
 			pos(center().x + center().x - 160, 5),

@@ -51,6 +51,8 @@ const scenes = {
 
 		level1.drawWaves("water", "wave");
 
+		uiManager.addDarkBg();
+
 		uiManager.displayAppleCount(player);
 		uiManager.displayLivesCount(player);
 

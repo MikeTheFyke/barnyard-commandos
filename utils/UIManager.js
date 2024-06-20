@@ -5,7 +5,8 @@ class UIManager {
 				size: 50,
 				font: "round",
 			}),
-			pos(85, 10),
+			pos(center().x + center().x - center().x / 8, 10),
+			color(255, 0, 0),
 			fixed(),
 		]);
 		this.livesCountUI.add([
@@ -28,12 +29,32 @@ class UIManager {
 				}).length,
 			},
 			fixed(),
-			pos(70, 70),
+			pos(70, 10),
 		]);
 		this.appleCountUI.add([
 			sprite("apple-icon"),
 			pos(-60, 0),
 			scale(3),
+			fixed(),
+		]);
+	}
+
+	addDarkBg() {
+		add([sprite("background-ARMY"), pos(0, 0), scale(4, 0.4), fixed()]);
+		add([rect(275, 55), pos(5, 5), color(0, 100, 0), fixed()]);
+		add([
+			rect(120, 55),
+			pos(center().x + center().x - 160, 5),
+			color(0, 100, 0),
+			fixed(),
+		]);
+		add([circle(80), pos(center(0).x, 30), color(0, 100, 0), fixed()]);
+		add([
+			sprite("rams-256"),
+			area(),
+			anchor("center"),
+			pos(center().x, 40),
+			scale(0.5),
 			fixed(),
 		]);
 	}

@@ -105,11 +105,13 @@ export class Player {
 	}
 	respawnPlayer() {
 		if (this.lives > 0) {
+			this.lives--;
 			this.gameObj.pos = vec2(this.initialX, this.initialY);
 			this.isRespawning = true;
 			setTimeout(() => (this.isRespawning = false), 1000);
 			return;
 		}
+		go("gameover");
 	}
 	update() {
 		onUpdate(() => {

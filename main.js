@@ -9,6 +9,7 @@ import { level3Layout, level3Mappings } from "./content/level3/level3Layout.js";
 import { level3Config } from "./content/level3/config.js";
 import { Level } from "./utils/Level.js";
 import { Player } from "./entities/Player.js";
+import { Spiders } from "./entities/Spiders.js";
 import { attachCamera } from "./utils/Camera.js";
 
 kaboom({
@@ -50,6 +51,10 @@ const scenes = {
 		player.enablePassthrough();
 		player.enableCoinPickup();
 		player.update();
+
+		const spiders = new Spiders([vec2(2000, 300)], [300], [2], 1);
+		spiders.setMovementPattern();
+		spiders.enablePassthrough();
 
 		attachCamera(player.gameObj, 0, 200);
 
@@ -139,5 +144,5 @@ for (const key in scenes) {
 	scene(key, scenes[key]);
 }
 
-// go("menu");
-go(3);
+go("menu");
+// go(3);

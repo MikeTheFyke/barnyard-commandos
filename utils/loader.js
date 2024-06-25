@@ -126,7 +126,7 @@ export const load = {
 				},
 			},
 		});
-		loadSprite("fish-1", "./assets/Fish_1.png", {
+		loadSprite("fish", "./assets/Fish_1.png", {
 			sliceX: 2,
 			sliceY: 1,
 			anims: {
@@ -190,14 +190,14 @@ export const load = {
 				},
 			},
 		});
-		loadSprite("flame-1", "./assets/Flame_1.png", {
+		loadSprite("flames", "./assets/Flame_1.png", {
 			sliceX: 2,
 			sliceY: 1,
 			anims: {
 				burn: { from: 0, to: 1, loop: true },
 			},
 		});
-		loadSprite("flame-2", "./assets/Flame_2.png", {
+		loadSprite("flames-2", "./assets/Flame_2.png", {
 			sliceX: 2,
 			sliceY: 1,
 			anims: {

@@ -124,7 +124,6 @@ export class Player {
 
 	update() {
 		onUpdate(() => {
-			console.log("this.gameObj.pos.y : ", this.gameObj.pos.y);
 			if (this.gameObj.isGrounded()) {
 				this.hasJumpedOnce = false;
 				this.timeSinceLastGrounded = time();

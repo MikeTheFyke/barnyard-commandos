@@ -10,6 +10,7 @@ import { level3Config } from "./content/level3/config.js";
 import { Level } from "./utils/Level.js";
 import { Player } from "./entities/Player.js";
 import { Spiders } from "./entities/Spiders.js";
+import { Projectiles } from "./entities/Projectiles.js";
 import { attachCamera } from "./utils/Camera.js";
 
 kaboom({
@@ -50,6 +51,7 @@ const scenes = {
 
 		player.enablePassthrough();
 		player.enableCoinPickup();
+		player.enableMobVulnerability();
 		player.update();
 
 		const spiders = new Spiders(
@@ -60,6 +62,13 @@ const scenes = {
 		);
 		spiders.setMovementPattern();
 		spiders.enablePassthrough();
+
+		const fish = new Projectiles(
+			level1Config.fishPositions.map((fishPos) => fishPos()),
+			level1Config.fishRanges,
+			"fish"
+		);
+		fish.setMovementPattern();
 
 		attachCamera(player.gameObj, 0, 200);
 
@@ -93,6 +102,22 @@ const scenes = {
 		player.enablePassthrough();
 		player.enableCoinPickup();
 		player.update();
+
+		const spiders = new Spiders(
+			level2Config.spiderPositions.map((spiderPos) => spiderPos()),
+			level2Config.spiderRanges,
+			level2Config.spiderDurations,
+			level2Config.spiderType
+		);
+		spiders.setMovementPattern();
+		spiders.enablePassthrough();
+
+		const flames = new Projectiles(
+			level2Config.flamesPositions.map((flamesPos) => flamesPos()),
+			level2Config.flamesRanges,
+			"flames"
+		);
+		flames.setMovementPattern();
 
 		attachCamera(player.gameObj, 0, 200);
 
@@ -149,5 +174,5 @@ for (const key in scenes) {
 	scene(key, scenes[key]);
 }
 
-go("menu");
-// go(3);
+// go("menu");
+go(2);

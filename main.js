@@ -100,7 +100,9 @@ const scenes = {
 		setGravity(1400);
 
 		const level3 = new Level();
-		level3.drawBackground("background-castle");
+		level3.drawBackground("background-sky-0");
+		level3.drawBackground("background-sky-1");
+		level3.drawBackground("background-sky-2");
 		level3.drawMapLayout(level3Layout, level3Mappings);
 
 		const player = new Player(
@@ -137,4 +139,5 @@ for (const key in scenes) {
 	scene(key, scenes[key]);
 }
 
-go("menu");
+// go("menu");
+go(3);

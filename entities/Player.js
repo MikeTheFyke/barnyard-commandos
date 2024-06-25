@@ -115,6 +115,7 @@ export class Player {
 	}
 	update() {
 		onUpdate(() => {
+			console.log("this.gameObj.pos.y : ", this.gameObj.pos.y);
 			if (this.gameObj.isGrounded()) {
 				this.hasJumpedOnce = false;
 				this.timeSinceLastGrounded = time();
@@ -143,7 +144,7 @@ export class Player {
 				this.gameObj.play("jump-down");
 			}
 
-			if (this.gameObj.pos.y > 1400) {
+			if (this.gameObj.pos.y > 2000) {
 				play("hit", { speed: 1.5 });
 				this.respawnPlayer();
 			}

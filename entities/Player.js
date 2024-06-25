@@ -113,6 +113,15 @@ export class Player {
 		}
 		go("gameover");
 	}
+
+	enableMobVulnerability() {
+		function hitAndRespawn(context) {
+			play("hit", { speed: 1.5 });
+			context.respawnPlayer();
+		}
+		this.gameObj.onCollide("spiders", () => hitAndRespawn(this));
+	}
+
 	update() {
 		onUpdate(() => {
 			console.log("this.gameObj.pos.y : ", this.gameObj.pos.y);

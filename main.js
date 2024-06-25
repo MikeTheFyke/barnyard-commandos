@@ -52,7 +52,12 @@ const scenes = {
 		player.enableCoinPickup();
 		player.update();
 
-		const spiders = new Spiders([vec2(2000, 300)], [300], [2], 1);
+		const spiders = new Spiders(
+			level1Config.spiderPositions.map((spiderPos) => spiderPos()),
+			level1Config.spiderRanges,
+			level1Config.spiderDurations,
+			level1Config.spiderType
+		);
 		spiders.setMovementPattern();
 		spiders.enablePassthrough();
 

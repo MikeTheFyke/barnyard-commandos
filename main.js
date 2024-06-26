@@ -101,6 +101,7 @@ const scenes = {
 
 		player.enablePassthrough();
 		player.enableCoinPickup();
+		player.enableMobVulnerability();
 		player.update();
 
 		const spiders = new Spiders(
@@ -174,5 +175,5 @@ for (const key in scenes) {
 	scene(key, scenes[key]);
 }
 
-// go("menu");
-go(2);
+go("menu");
+// go(2);

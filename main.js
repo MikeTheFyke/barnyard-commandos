@@ -174,6 +174,7 @@ const scenes = {
 
 		player.enablePassthrough();
 		player.enableCoinPickup();
+		player.enableMobVulnerability();
 		player.update();
 
 		attachCamera(player.gameObj, 0, 200);

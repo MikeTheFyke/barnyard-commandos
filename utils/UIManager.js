@@ -166,6 +166,44 @@ class UIManager {
 			go("menu");
 		});
 	}
+	displayGameOverScreen() {
+		add([rect(1280, 720), color(0, 0, 0)]);
+		add([
+			text("Game Over!", { size: 50, font: "round" }),
+			area(),
+			anchor("center"),
+			pos(center()),
+		]);
+
+		this.displayBlinkingUIMessage(
+			"Press ENTER to Start Game",
+			vec2(center().x, center().y + 100)
+		);
+		onKeyPress("enter", () => {
+			play("confirm-ui");
+			go(1);
+		});
+	}
+
+	displayEndGameScreen() {
+		add([rect(1280, 720), collor(0, 0, 0)]);
+		add([
+			text("you Won! Thanks for Playing!", { size: 50, font: "round" }),
+			area(),
+			anchor("center"),
+			pos(center()),
+		]);
+
+		this.displayBlinkingUIMessage(
+			"Press ENTER to Play Again",
+			vec2(center().x, center().y + 100)
+		);
+
+		onKeyPress("enter", () => {
+			play("confirm-ui");
+			go("menu");
+		});
+	}
 }
 
 export const uiManager = new UIManager();

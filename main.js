@@ -189,13 +189,16 @@ const scenes = {
 		player.updateAppleCount(uiManager.appleCountUI);
 		player.updateLives(uiManager.livesCountUI);
 	},
-	gameover: () => {},
-	end: () => {},
+	gameover: () => {
+		uiManager.displayGameOverScreen();
+	},
+	end: () => {
+		uiManager.displayEndGameScreen();
+	},
 };
 
 for (const key in scenes) {
 	scene(key, scenes[key]);
 }
 
-// go("menu");
-go(3);
+go("menu");

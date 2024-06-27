@@ -39,6 +39,39 @@ class UIManager {
 		]);
 	}
 
+	displayBlinkingUIMessage(content, position) {
+		const message = add([
+			text(content, { size: 24, font: "Round" }),
+			area(),
+			anchor("center"),
+			pos(position),
+			opacity(),
+			state("flash-up", ["flash-up", "flash-down"]),
+		]);
+
+		message.onStateEnter("flash-up", async () => {
+			await tween(
+				message.opacity,
+				0,
+				0.5,
+				(opacity) => (message.opacity = opacity),
+				easings.linear
+			);
+			message.enterState("flash-down");
+		});
+
+		message.onStateEnter("flash-down", async () => {
+			await tween(
+				message.opacity,
+				1,
+				0.5,
+				(opacity) => (message.opacity = opacity),
+				easings.linear
+			);
+			message.enterState("flash-up");
+		});
+	}
+
 	addDarkBg() {
 		add([sprite("background-ARMY"), pos(0, 0), scale(4, 0.4), fixed()]);
 		add([rect(330, 55), pos(5, 5), color(0, 100, 0), fixed()]);
@@ -80,7 +113,7 @@ class UIManager {
 			scale(6),
 		]);
 		add([
-			sprite("porks-256"),
+			sprite("rams-256"),
 			area(),
 			anchor("center"),
 			pos(
@@ -90,7 +123,7 @@ class UIManager {
 			scale(1.5),
 		]);
 		add([
-			sprite("rams-256"),
+			sprite("porks-256"),
 			area(),
 			anchor("center"),
 			pos(
@@ -176,12 +209,12 @@ class UIManager {
 		]);
 
 		this.displayBlinkingUIMessage(
-			"Press ENTER to Start Game",
+			"Press ENTER to go to Main Menu",
 			vec2(center().x, center().y + 100)
 		);
 		onKeyPress("enter", () => {
 			play("confirm-ui");
-			go(1);
+			go("menu");
 		});
 	}
 

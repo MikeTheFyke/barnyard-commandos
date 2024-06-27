@@ -12,6 +12,7 @@ import { Player } from "./entities/Player.js";
 import { Spiders } from "./entities/Spiders.js";
 import { Projectiles } from "./entities/Projectiles.js";
 import { Axes } from "./entities/Axes.js";
+import { Saws } from "./entities/Saws.js";
 import { attachCamera } from "./utils/Camera.js";
 
 kaboom({
@@ -126,6 +127,12 @@ const scenes = {
 			level2Config.axesSwingDurations
 		);
 		axes.setMovementPattern();
+
+		const saws = new Saws(
+			level2Config.sawPositions.map((sawPos) => sawPos()),
+			level2Config.sawRanges
+		);
+		saws.setMovementPattern();
 
 		attachCamera(player.gameObj, 0, 200);
 

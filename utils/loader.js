@@ -303,5 +303,6 @@ export const load = {
 		loadSound("apple", "./sounds/sounds_coin.wav");
 		loadSound("spider-attack", "./sounds/sounds_spider-attack.mp3");
 		loadSound("swinging-axe", "./sounds/sounds_swinging-axe.mp3");
+		loadSound("saws", "./sounds/saw.wav");
 	},
 };

@@ -11,6 +11,7 @@ import { Level } from "./utils/Level.js";
 import { Player } from "./entities/Player.js";
 import { Spiders } from "./entities/Spiders.js";
 import { Projectiles } from "./entities/Projectiles.js";
+import { Axes } from "./entities/Axes.js";
 import { attachCamera } from "./utils/Camera.js";
 
 kaboom({
@@ -120,6 +121,12 @@ const scenes = {
 		);
 		flames.setMovementPattern();
 
+		const axes = new Axes(
+			level2Config.axesPositions.map((axesPos) => axesPos()),
+			level2Config.axesSwingDurations
+		);
+		axes.setMovementPattern();
+
 		attachCamera(player.gameObj, 0, 200);
 
 		level2.drawWaves("lava", "wave");
@@ -175,5 +182,5 @@ for (const key in scenes) {
 	scene(key, scenes[key]);
 }
 
-go("menu");
-// go(2);
+// go("menu");
+go(2);

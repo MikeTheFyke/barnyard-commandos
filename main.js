@@ -13,6 +13,7 @@ import { Spiders } from "./entities/Spiders.js";
 import { Projectiles } from "./entities/Projectiles.js";
 import { Axes } from "./entities/Axes.js";
 import { Saws } from "./entities/Saws.js";
+import { Birds } from "./entities/Birds.js";
 import { attachCamera } from "./utils/Camera.js";
 
 kaboom({
@@ -165,6 +166,12 @@ const scenes = {
 			false
 		);
 
+		const birds = new Birds(
+			level3Config.birdPositions.map((birdPos) => birdPos()),
+			level3Config.birdRanges
+		);
+		birds.setMovementPattern();
+
 		player.enablePassthrough();
 		player.enableCoinPickup();
 		player.update();
@@ -190,4 +197,4 @@ for (const key in scenes) {
 }
 
 // go("menu");
-go(2);
+go(3);

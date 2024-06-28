@@ -36,6 +36,14 @@ const scenes = {
 	},
 	// Levels 1, 2 & 3
 	1: () => {
+		const waterAmbience = play("water-ambience", {
+			volume: 0.02,
+			loop: true,
+		});
+		onSceneLeave(() => {
+			waterAmbience.paused();
+		});
+
 		setGravity(1400);
 
 		const level1 = new Level();
@@ -86,6 +94,14 @@ const scenes = {
 		player.updateLives(uiManager.livesCountUI);
 	},
 	2: () => {
+		const lavaAmbience = play("lava-ambience", {
+			volume: 0.02,
+			loop: true,
+		});
+		onSceneLeave(() => {
+			lavaAmbience.paused();
+		});
+
 		setGravity(1400);
 
 		const level2 = new Level();
@@ -148,6 +164,14 @@ const scenes = {
 		player.updateLives(uiManager.livesCountUI);
 	},
 	3: () => {
+		const windAmbience = play("strong-wind", {
+			volume: 0.02,
+			loop: true,
+		});
+		onSceneLeave(() => {
+			windAmbience.paused();
+		});
+
 		setGravity(1400);
 
 		const level3 = new Level();

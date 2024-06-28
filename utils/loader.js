@@ -305,5 +305,8 @@ export const load = {
 		loadSound("swinging-axe", "./sounds/sounds_swinging-axe.mp3");
 		loadSound("saws", "./sounds/saw.wav");
 		loadSound("dive", "./sounds/sounds_dive.wav");
+		loadSound("water-ambience", "./sounds/sounds_ambience-water.mp3");
+		loadSound("lava-ambience", "./sounds/sounds_ambience-lava.wav");
+		loadSound("strong-wind", "./sounds/sounds_ambience-strong-wind.wav");
 	},
 };
